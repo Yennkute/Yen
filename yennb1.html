@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính toán với hai số a và b</title>
+    <script>
+        // Hàm tính toán 4 phép toán cơ bản
+        function calculate() {
+            var a = parseFloat(document.getElementById("a").value); // Lấy giá trị của số a
+            var b = parseFloat(document.getElementById("b").value); // Lấy giá trị của số b
+            
+            // Kiểm tra nếu a và b là số
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("result").innerHTML = "Vui lòng nhập hai số hợp lệ!";
+                return;
+            }
+
+            // Thực hiện các phép toán
+            var tong = a + b;
+            var hieu = a - b;
+            var tich = a * b;
+            var thuong = b != 0 ? a / b : "Không thể chia cho 0!";
+
+            // Hiển thị kết quả
+            document.getElementById("result").innerHTML =
+                "<b>Kết quả:</b><br>" +
+                "Tổng: " + tong + "<br>" +
+                "Hiệu: " + hieu + "<br>" +
+                "Tích: " + tich + "<br>" +
+                "Thương: " + thuong;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Tính toán 4 phép cơ bản của hai số a và b</h1>
+
+    <label for="a">Nhập số a: </label>
+    <input type="number" id="a" required>
+    <br>
+    <label for="b">Nhập số b: </label>
+    <input type="number" id="b" required>
+    <br>
+    <button onclick="calculate()">Tính toán</button>
+    
+    <h3>Kết quả:</h3>
+    <p id="result"></p>
+
+</body>
+</html>
